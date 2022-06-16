@@ -151,6 +151,45 @@ void f_rrr(t_stack *stack)
     f_rrb(stack);
 }
 
+// void find_order(t_stack *stack)
+// {
+//     while(stack->a)
+//     {
+//         stack->a[i] 
+//     }
+// }
+
+void sort(t_stack *stack)
+{
+    int i;
+    int j;
+    int x;
+    int y;
+    int count_a;
+
+    i = stack->size_a_ar;
+    j = stack->size_b - 1;
+    if(stack->a[i] > stack->a[i - 1] && stack->b[j] > stack->b[j - 1])
+        f_ss(stack);
+    else if(stack->a[i] > stack->a[i - 1])
+        f_sa(stack);
+    else if(stack->b[j] > stack->b[j - 1])
+        f_sb(stack);
+    
+    x = stack->size_a_ar - 1;
+    y = stack->size_a_ar;
+    count_a = 0;
+    while (x >= 0)
+    {
+           if(stack->a[stack->size_a_ar] < stack->a[x])
+            {
+                count_a++;
+            }
+            x--;
+    }
+    if(count_a == )
+}
+
 int main(int argc, char *argv[])
 {
     int argc_count;
@@ -177,16 +216,17 @@ int main(int argc, char *argv[])
     }
     stack->size_b = 0;
     stack->size_a_ar = stack->arg_c;
+    sort(stack);
     printf("****************************** \n");
-    f_sa(stack);
-    f_pb(stack);
-    f_pb(stack);
-    f_pb(stack);
-    f_ra(stack);
-    f_rb(stack);
-    f_rra(stack);
-    f_rrb(stack);
-    f_sa(stack);
+    // f_sa(stack);
+    // f_pb(stack);
+    // f_pb(stack);
+    // f_pb(stack);
+    // f_ra(stack);
+    // f_rb(stack);
+    // f_rra(stack);
+    // f_rrb(stack);
+    // f_sa(stack);
     // f_pa(stack);
     // f_pa(stack);
     // f_pa(stack);
