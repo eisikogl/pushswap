@@ -151,13 +151,28 @@ void f_rrr(t_stack *stack)
     f_rrb(stack);
 }
 
-// void find_order(t_stack *stack)
-// {
-//     while(stack->a)
-//     {
-//         stack->a[i] 
-//     }
-// }
+int check_order(t_stack *stack)
+{
+    int i;
+    int j;
+
+    i = 0;
+    j = 0;
+
+
+    while(i <= stack->size_a_ar)
+    {
+        j = i + 1;
+        while(j <= stack->size_a_ar)
+        {
+            if(stack->a[i] < stack->a[j])
+                return 0;
+            j++;
+        }
+        i++; 
+    }
+    return 1;
+}
 
 void sort(t_stack *stack)
 {
@@ -166,29 +181,49 @@ void sort(t_stack *stack)
     int x;
     int y;
     int count_a;
+    int boolean;
 
     i = stack->size_a_ar;
     j = stack->size_b - 1;
-    if(stack->a[i] > stack->a[i - 1] && stack->b[j] > stack->b[j - 1])
-        f_ss(stack);
-    else if(stack->a[i] > stack->a[i - 1])
-        f_sa(stack);
-    else if(stack->b[j] > stack->b[j - 1])
-        f_sb(stack);
-    
-    x = stack->size_a_ar - 1;
-    y = stack->size_a_ar;
-    count_a = 0;
-    while (x >= 0)
-    {
-           if(stack->a[stack->size_a_ar] < stack->a[x])
+
+
+
+        while(stack->size_a_ar > 0)
+        {
+            if ((stack->a[stack->size_a_ar] > stack->a[0]) && (stack->a[stack->size_a_ar] > stack->a[stack->size_a_ar - 1]))
+                f_ra(stack);
+            if (stack->a[0] < stack->a[1] && stack->a[0] < stack->a[stack->size_a_ar])
+                f_rra(stack);
+            if (stack->a[stack->size_a_ar] > stack->a[stack->size_a_ar - 1])
             {
-                count_a++;
+                f_sa(stack);
+                f_pb(stack);
             }
-            x--;
-    }
-    if(count_a == )
+            if (stack->a[stack->size_a_ar] < stack->a[stack->size_a_ar - 1])
+                f_pb(stack);
+        }
+        if(stack->size_a_ar == 0)
+            f_pb(stack);
+        
+        while(stack->size_b - 1 > 0)
+        {
+            if ((stack->b[stack->size_b - 1] < stack->b[0]) && (stack->b[stack->size_b - 1] < stack->b[stack->size_b - 2]))
+                f_rb(stack);
+            if (stack->b[0] < stack->b[1] && stack->b[0] < stack->b[stack->size_b - 1])
+                f_rrb(stack);
+            if (stack->b[stack->size_b - 1] < stack->b[stack->size_b - 2])
+            {
+                f_sb(stack);
+                f_pa(stack);
+            }
+            if (stack->b[stack->size_b - 1] > stack->b[stack->size_b - 2])
+                f_pa(stack);
+        }
+        if(stack->size_b - 1 == 0)
+            f_pa(stack);
+
 }
+
 
 int main(int argc, char *argv[])
 {
@@ -216,7 +251,13 @@ int main(int argc, char *argv[])
     }
     stack->size_b = 0;
     stack->size_a_ar = stack->arg_c;
-    sort(stack);
+    while(1)
+    {
+        sort(stack);
+        if(check_order(stack))
+            break;
+    }
+    
     printf("****************************** \n");
     // f_sa(stack);
     // f_pb(stack);
