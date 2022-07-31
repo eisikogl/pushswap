@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocoglu <akocoglu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 15:14:09 by akocoglu          #+#    #+#             */
-/*   Updated: 2022/06/15 19:10:34 by akocoglu         ###   ########.fr       */
+/*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
+/*   Updated: 2022/06/15 19:10:34 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
 # include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_stack
 {
@@ -24,9 +24,32 @@ typedef struct s_stack
     int size_b;
     int size_a;
     int size_a_ar;
+    int *index_arr;
 }   t_stack;
 
 void    change_stack_a(t_stack *stack);
 void    change_stack_b(t_stack *stack);
+
+void f_sa(t_stack *stack);
+void f_sb(t_stack *stack);
+void f_ss(t_stack *stack);
+void f_pa(t_stack *stack);
+void f_pb(t_stack *stack);
+void f_ra(t_stack *stack);
+void f_rb(t_stack *stack);
+void f_rr(t_stack *stack);
+void f_rra(t_stack *stack);
+void f_rrb(t_stack *stack);
+void f_rrr(t_stack *stack);
+
+int check_order(t_stack *stack);
+int	cntrl(int nptr);
+int	ft_atoi(const char *nptr);
+
+void small_sort(t_stack *stack);
+void five_sort(t_stack *stack);
+void four_sort(t_stack *stack);
+void three_sort(t_stack *stack);
+void indexing(t_stack *stack);
 
 #endif
