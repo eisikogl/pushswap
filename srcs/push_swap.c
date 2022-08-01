@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/01 05:05:37 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 02:50:09 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         argc_count++;
     stack->arg_c = argc_count;
     stack->a = (int *)malloc(sizeof(int) * argc_count);
-    stack->b = (int *)malloc(sizeof(int) * argc_count); 
+    stack->b = (int *)malloc(sizeof(int) * argc_count);
     while(i <= argc - 1)
     {
         stack->a[argc_count] = ft_atoi(argv[i]);
@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
     ft_printf("\n\n");
     int x = stack->size_a_ar;
     int b = stack->size_b - 1;
+    if(stack->size_b == 0 && !(stack->b))
+        free(stack->b);
     while(x >= 0)
     {
         ft_printf("A-%d \n", stack->a[x]);

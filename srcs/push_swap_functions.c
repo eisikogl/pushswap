@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/01 05:02:19 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 02:44:06 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void    f_ss(t_stack *stack)
 
 void    f_pb(t_stack *stack)
 {
-    stack->b[stack->size_b]= stack->a[stack->size_a_ar];
     stack->size_b++;
+    stack->b[stack->size_b - 1] = stack->a[stack->size_a_ar];
     change_stack_a(stack);
 }
 
@@ -52,7 +52,7 @@ void    f_pa(t_stack *stack)
     int i = stack->size_a_ar;
     int j = stack->size_a_ar;
 
-    temp = (int *)malloc(sizeof(int) * (stack->size_a_ar + 2));
+    temp = (int *)malloc(sizeof(int) * (stack->size_a_ar + 1));
     while(i >= 0)
     {
         temp[i] = stack->a[i];
@@ -66,6 +66,7 @@ void    f_pa(t_stack *stack)
         stack->a[j] = temp[j];
         j--;
     }
+    free(temp);
     stack->size_a_ar++;
     change_stack_b(stack);
 }

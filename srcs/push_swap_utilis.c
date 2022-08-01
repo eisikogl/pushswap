@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:12:58 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/01 02:29:41 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 02:49:04 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,56 +15,60 @@
 
 void    change_stack_a(t_stack *stack)
 {
-    int *temp_stack;
+    int *temp_stacka;
     int i;
     int j;
-    int l;
-
-    l = stack->size_a_ar;
+    
     i = stack->size_a_ar - 1;
-    j = stack->size_a_ar ;
-    temp_stack = (int *)malloc(sizeof(int) * (stack->size_a_ar));
-    while(l - 1>= 0)
+    j = stack->size_a_ar - 1;
+    temp_stacka = (int *)malloc(sizeof(int) * (stack->size_a_ar));
+    while(i >= 0)
     {
-        temp_stack[i] = stack->a[i];
+        temp_stacka[i] = stack->a[i];
         i--;
-        l--;
     }
     free(stack->a);
     stack->a = (int *)malloc(sizeof(int) * (stack->size_a_ar));
     while(j >= 0)
     {
-        stack->a[j] = temp_stack[j];
+        stack->a[j] = temp_stacka[j];
         j--;
     }
+    free(temp_stacka);
     stack->size_a_ar--;
 }
 
 void    change_stack_b(t_stack *stack)
 {
-    int *temp_stack;
+    int *temp_stackb;
     int i;
     int j;
-    int l;
 
-    l = stack->size_b;
-    i = stack->size_b - 2;
-    j = stack->size_b - 2;
-    temp_stack = (int *)malloc(sizeof(int) * (stack->size_b-1));
-    while(l - 1>= 0)
+    if (stack->size_b == 1)
     {
-        temp_stack[i] = stack->b[i];
-        i--;
-        l--;
+        free(stack->b);
+        stack->size_b--;
     }
-    free(stack->b);
-    stack->b = (int *)malloc(sizeof(int) * (stack->size_b - 1));
-    while(j >= 0)
+    else
     {
-        stack->b[j] = temp_stack[j];
-        j--;
+        i = stack->size_b - 2;
+        j = stack->size_b - 2;
+        temp_stackb = (int *)malloc(sizeof(int) * (stack->size_b - 1));
+        while(i >= 0)
+        {
+            temp_stackb[i] = stack->b[i];
+            i--;
+        }
+        free(stack->b);
+        stack->b = (int *)malloc(sizeof(int) * (stack->size_b - 1));
+        while(j >= 0)
+        {
+            stack->b[j] = temp_stackb[j];
+            j--;
+        }
+        free(temp_stackb);
+        stack->size_b--;
     }
-    stack->size_b--;
 }
 
 int check_order(t_stack *stack)

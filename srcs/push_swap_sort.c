@@ -30,8 +30,7 @@ void three_sort(t_stack *stack)
         f_sa(stack);
         f_rra(stack); 
         ft_printf("\n sa \n rra");       
-    }
-        
+    }        
 }
 void four_sort(t_stack *stack)
 {
@@ -70,7 +69,6 @@ void four_sort(t_stack *stack)
         three_sort(stack);
         f_pa(stack);
         ft_printf("\n pa");
-        
 }
 
 void five_sort(t_stack *stack)
@@ -109,7 +107,7 @@ void five_sort(t_stack *stack)
         }
         else if (min_index == stack->size_a_ar - 4)
         {
-            f_rra(stack); 
+            f_rra(stack);
             ft_printf("\n rra");
         }
         f_pb(stack);
