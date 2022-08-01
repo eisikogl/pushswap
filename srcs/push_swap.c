@@ -6,12 +6,11 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/06/15 19:14:13 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/01 05:05:37 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
+# include "../includes/push_swap.h"
 
 int main(int argc, char *argv[])
 {
@@ -33,29 +32,29 @@ int main(int argc, char *argv[])
     while(i <= argc - 1)
     {
         stack->a[argc_count] = ft_atoi(argv[i]);
-        printf("dizi:%d \n", stack->a[argc_count]);
+        ft_printf("dizi:%d \n", stack->a[argc_count]);
         argc_count--;
         i++;
     }
     stack->size_b = 0;
     stack->size_a_ar = stack->arg_c;
-    
-    printf("****************************** \n");
+
+    ft_printf("****************************** \n");
     indexing(stack);
-    small_sort(stack);
+    if(!check_order(stack))
+        small_sort(stack);
     
-    printf("\n");
+    ft_printf("\n\n");
     int x = stack->size_a_ar;
     int b = stack->size_b - 1;
     while(x >= 0)
     {
-        printf("A-%d \n", stack->a[x]);
+        ft_printf("A-%d \n", stack->a[x]);
         x--;
     }
     while(b >= 0)
     {
-        printf("B-%d \n", stack->b[b]);
+        ft_printf("B-%d \n", stack->b[b]);
          b--;
     }
-    
 } 

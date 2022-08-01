@@ -1,4 +1,5 @@
-#include "push_swap.h"
+
+#include "../includes/push_swap.h"
 
 void three_sort(t_stack *stack)
 {
@@ -7,39 +8,37 @@ void three_sort(t_stack *stack)
     {
         f_sa(stack);
         f_ra(stack);
-        printf("\n sa \n ra"); 
+        ft_printf("\n sa \n ra"); 
     }
     if (stack->a[i] < stack->a[i - 1] && stack->a[i] > stack->a[0] && stack->a[i - 1] > stack->a[0]) // 2 3 1
     {
         f_rra(stack);
-        printf("\n rra"); 
+        ft_printf("\n rra"); 
     }
     if (stack->a[i] > stack->a[i - 1] && stack->a[i] < stack->a[0] && stack->a[i - 1] < stack->a[0]) // 2 1 3
     {
         f_sa(stack);
-        printf("\n sa"); 
+        ft_printf("\n sa"); 
     }
     if (stack->a[i] > stack->a[i - 1] && stack->a[i] > stack->a[0] && stack->a[i - 1] < stack->a[0]) // 3 1 2
     {
         f_ra(stack);
-        printf("\n ra"); 
+        ft_printf("\n ra"); 
     }
     if (stack->a[i] > stack->a[i - 1] && stack->a[i] > stack->a[0] && stack->a[i - 1] > stack->a[0]) // 3 2 1
     {
         f_sa(stack);
         f_rra(stack); 
-        printf("\n sa \n rra");       
+        ft_printf("\n sa \n rra");       
     }
         
 }
 void four_sort(t_stack *stack)
 {
     int i = stack->size_a_ar;
-    // int j;
     int min;
     int min_index;
 
-    // j = 0;
     min = stack->a[i];
         while (i >= 0)
         {
@@ -53,39 +52,34 @@ void four_sort(t_stack *stack)
         if (min_index == stack->size_a_ar - 1)
         {
             f_sa(stack);
-            printf("\n sa");
+            ft_printf("\n sa");
         }
         else if (min_index == stack->size_a_ar - 2)
         {
             f_rra(stack);
             f_rra(stack);
-            printf("\n rra \n rra");
+            ft_printf("\n rra \n rra");
         }
         else if (min_index == stack->size_a_ar - 3)
         {
             f_rra(stack);
-            printf("\n rra");
+            ft_printf("\n rra");
         }
         f_pb(stack);
-        printf("\n pb");
+        ft_printf("\n pb");
         three_sort(stack);
         f_pa(stack);
-        printf("\n pa");
+        ft_printf("\n pa");
         
 }
 
 void five_sort(t_stack *stack)
 {
     int i = stack->size_a_ar;
-    // int x = stack->size_a_ar;
-    // int j;
     int min;
-    // int max;
     int min_index;
-    // int max_index;
 
     min = stack->a[i];
-    // max = stack->a[i];
         while (i >= 0)
         {
             if (min >= stack->a[i])
@@ -98,36 +92,35 @@ void five_sort(t_stack *stack)
         if (min_index == stack->size_a_ar - 1)
         {
             f_sa(stack);
-            printf("\n sa");
+            ft_printf("\n sa");
         }
         else if (min_index == stack->size_a_ar - 2)
         {
             f_rra(stack);
             f_rra(stack);
             f_rra(stack);
-            printf("\n rra \n rra \n rra");
+            ft_printf("\n rra \n rra \n rra");
         }
         else if (min_index == stack->size_a_ar - 3)
         {
             f_rra(stack);
             f_rra(stack); 
-            printf("\n rra \n rra"); 
+            ft_printf("\n rra \n rra"); 
         }
         else if (min_index == stack->size_a_ar - 4)
         {
             f_rra(stack); 
-            printf("\n rra");
+            ft_printf("\n rra");
         }
         f_pb(stack);
-        printf("\n pb");
+        ft_printf("\n pb");
         four_sort(stack);
         f_pa(stack);
-        printf("\n pa");
+        ft_printf("\n pa");
 }
 
 void small_sort(t_stack *stack)
 {
-    
     if ((stack->size_a_ar + 1) == 3)
         three_sort(stack);
     if((stack->size_a_ar + 1) == 4)
@@ -162,7 +155,7 @@ void indexing(t_stack *stack)
 			j++;
 		}
 		stack->index_arr[i] = order_count;
-		printf("imIndex: %d ",stack->index_arr[i]);
+		ft_printf("imIndex: %d ",stack->index_arr[i]);
 		i++;
 	}
 }

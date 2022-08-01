@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_functions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/06/15 19:10:34 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/01 05:02:19 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void    f_sa(t_stack *stack)
 {
@@ -63,7 +63,7 @@ void    f_pa(t_stack *stack)
     stack->a[stack->size_a_ar + 1] = stack->b[stack->size_b - 1];
     while(j >= 0)
     {
-        stack->a[j] = temp[j] ;
+        stack->a[j] = temp[j];
         j--;
     }
     stack->size_a_ar++;

@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/06/15 19:10:34 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:35:19 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include "../libs/ft_printf/ft_printf.h"
+# include "../libs/libft/libft.h"
 
 typedef struct s_stack
 {
@@ -45,6 +47,7 @@ void f_rrr(t_stack *stack);
 int check_order(t_stack *stack);
 int	cntrl(int nptr);
 int	ft_atoi(const char *nptr);
+int min_index(t_stack *stack,int sort);
 
 void small_sort(t_stack *stack);
 void five_sort(t_stack *stack);

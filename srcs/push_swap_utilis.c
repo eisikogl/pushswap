@@ -6,11 +6,13 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:12:58 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/07/31 23:46:17 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/01 02:29:41 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+
+#include "../includes/push_swap.h"
+
 void    change_stack_a(t_stack *stack)
 {
     int *temp_stack;

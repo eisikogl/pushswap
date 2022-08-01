@@ -1,6 +1,9 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "push_swap.h": "c"
+        "push_swap.h": "c",
+        "cstdio": "c",
+        "ft_printf.h": "c",
+        "libft.h": "c"
     }
 }
