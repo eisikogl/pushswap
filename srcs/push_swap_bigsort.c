@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 03:20:05 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 11:10:14 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 13:39:40 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,23 @@ void big_sort(t_stack *stack)
 		j = 0;
         while(j < size)
         {
-            int num = stack->index_arr[stack->size_a_ar]; // indexing has to be affected by swapfunc somehow
+            int num = stack->a[stack->size_a_ar]; // indexing has to be affected by swapfunc somehow
             if((((num >> i)&1) == 1))
 			{
                 f_ra(stack);
-				ft_printf("\n ra");
+				ft_printf("ra\n");
 			}
             else
 			{
                 f_pb(stack);
-				ft_printf("\n pb");
+				ft_printf("pb\n");
 			}
 			j++;
         }
         while (stack->size_b != 0)
         {
             f_pa(stack);
-			ft_printf("\n pa");
+			ft_printf("pa\n");
         }
 		i++;
     }

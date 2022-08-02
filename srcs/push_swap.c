@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 10:57:07 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 14:04:57 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,13 @@ int main(int argc, char *argv[])
     while(i <= argc - 1)
     {
         stack->a[argc_count] = ft_atoi(argv[i]);
-        ft_printf("dizi:%d \n", stack->a[argc_count]);
         argc_count--;
         i++;
     }
     stack->size_b = 0;
     stack->size_a_ar = stack->arg_c;
-
-    ft_printf("****************************** \n");
-
     if(!check_order(stack))
         small_sort(stack);
+    indexing(stack);
     big_sort(stack);
-    ft_printf("\n\n");
-    int x = stack->size_a_ar;
-    int b = stack->size_b - 1;
-  
-    while(x >= 0)
-    {
-        ft_printf("A-%d \n", stack->a[x]);
-        x--;
-    }
-    while(b >= 0)
-    {
-        ft_printf("B-%d \n", stack->b[b]);
-         b--;
-    }
 } 

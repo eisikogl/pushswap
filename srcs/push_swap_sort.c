@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 04:23:50 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 11:07:45 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 13:49:23 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void two_sort(t_stack *stack)
     if(stack->a[1] > stack->a[0])
     {
         f_sa(stack);
-        ft_printf("\n sa");
+        ft_printf("sa\n");
     }
     
 }
@@ -30,28 +30,28 @@ void three_sort(t_stack *stack)
     {
         f_sa(stack);
         f_ra(stack);
-        ft_printf("\n sa \n ra"); 
+        ft_printf("sa\nra\n"); 
     }
     if (stack->a[i] < stack->a[i - 1] && stack->a[i] > stack->a[0] && stack->a[i - 1] > stack->a[0]) // 2 3 1
     {
         f_rra(stack);
-        ft_printf("\n rra"); 
+        ft_printf("rra\n"); 
     }
     if (stack->a[i] > stack->a[i - 1] && stack->a[i] < stack->a[0] && stack->a[i - 1] < stack->a[0]) // 2 1 3
     {
         f_sa(stack);
-        ft_printf("\n sa"); 
+        ft_printf("sa\n"); 
     }
     if (stack->a[i] > stack->a[i - 1] && stack->a[i] > stack->a[0] && stack->a[i - 1] < stack->a[0]) // 3 1 2
     {
         f_ra(stack);
-        ft_printf("\n ra"); 
+        ft_printf("ra\n"); 
     }
     if (stack->a[i] > stack->a[i - 1] && stack->a[i] > stack->a[0] && stack->a[i - 1] > stack->a[0]) // 3 2 1
     {
         f_sa(stack);
         f_rra(stack); 
-        ft_printf("\n sa \n rra");       
+        ft_printf("sa\nrra\n");       
     }        
 }
 void four_sort(t_stack *stack)
@@ -73,24 +73,24 @@ void four_sort(t_stack *stack)
         if (min_index == stack->size_a_ar - 1)
         {
             f_sa(stack);
-            ft_printf("\n sa");
+            ft_printf("sa\n");
         }
         else if (min_index == stack->size_a_ar - 2)
         {
             f_rra(stack);
             f_rra(stack);
-            ft_printf("\n rra \n rra");
+            ft_printf("rra\nrra\n");
         }
         else if (min_index == stack->size_a_ar - 3)
         {
             f_rra(stack);
-            ft_printf("\n rra");
+            ft_printf("rra\n");
         }
         f_pb(stack);
-        ft_printf("\n pb");
+        ft_printf("pb\n");
         three_sort(stack);
         f_pa(stack);
-        ft_printf("\n pa");
+        ft_printf("pa\n");
 }
 
 void five_sort(t_stack *stack)
@@ -112,31 +112,31 @@ void five_sort(t_stack *stack)
         if (min_index == stack->size_a_ar - 1)
         {
             f_sa(stack);
-            ft_printf("\n sa");
+            ft_printf("sa\n");
         }
         else if (min_index == stack->size_a_ar - 2)
         {
             f_rra(stack);
             f_rra(stack);
             f_rra(stack);
-            ft_printf("\n rra \n rra \n rra");
+            ft_printf("rra\nrra\nrra\n");
         }
         else if (min_index == stack->size_a_ar - 3)
         {
             f_rra(stack);
             f_rra(stack); 
-            ft_printf("\n rra \n rra"); 
+            ft_printf("rra\nrra\n"); 
         }
         else if (min_index == stack->size_a_ar - 4)
         {
             f_rra(stack);
-            ft_printf("\n rra");
+            ft_printf("rra\n");
         }
         f_pb(stack);
-        ft_printf("\n pb");
+        ft_printf("pb\n");
         four_sort(stack);
         f_pa(stack);
-        ft_printf("\n pa");
+        ft_printf("pa\n");
 }
 
 void small_sort(t_stack *stack)
@@ -180,4 +180,11 @@ void indexing(t_stack *stack)
 		//ft_printf("imIndex: %d ",stack->index_arr[i]);
 		i++;
 	}
+    i=0;
+    while(i <= stack->size_a_ar)
+    {
+        stack->a[i] = stack->index_arr[i];
+        i++;
+    }
+
 }

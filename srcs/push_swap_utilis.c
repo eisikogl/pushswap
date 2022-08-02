@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:12:58 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 06:19:25 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 14:02:38 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int check_order(t_stack *stack)
         j = i + 1;
         while(j <= stack->size_a_ar)
         {
-            if(stack->a[i] < stack->a[j])
+            if(stack->a[i] > stack->a[j])
                 return 0;
             j++;
         }
