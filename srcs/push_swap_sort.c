@@ -1,5 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_sort.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/02 04:23:50 by eisikogl          #+#    #+#             */
+/*   Updated: 2022/08/02 04:23:51 by eisikogl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "../includes/push_swap.h"
+
+void two_sort(t_stack *stack)
+{
+    if(stack->a[1] > stack->a[0])
+    {
+        f_sa(stack);
+        ft_printf("\n sa");
+    }
+    
+}
 
 void three_sort(t_stack *stack)
 {
@@ -119,6 +141,8 @@ void five_sort(t_stack *stack)
 
 void small_sort(t_stack *stack)
 {
+    if ((stack->size_a_ar + 1) == 2)
+        two_sort(stack);
     if ((stack->size_a_ar + 1) == 3)
         three_sort(stack);
     if((stack->size_a_ar + 1) == 4)

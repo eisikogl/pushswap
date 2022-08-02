@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 02:50:09 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 06:04:54 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ int main(int argc, char *argv[])
 
     ft_printf("****************************** \n");
     indexing(stack);
+
     if(!check_order(stack))
         small_sort(stack);
-    
+    big_sort(stack);
     ft_printf("\n\n");
     int x = stack->size_a_ar;
     int b = stack->size_b - 1;
-    if(stack->size_b == 0 && !(stack->b))
-        free(stack->b);
+  
     while(x >= 0)
     {
         ft_printf("A-%d \n", stack->a[x]);

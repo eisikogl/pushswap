@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:12:58 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 02:49:04 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 06:19:25 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void    change_stack_b(t_stack *stack)
     if (stack->size_b == 1)
     {
         free(stack->b);
+        stack->b = (int *)malloc(sizeof(int) * (stack->size_a_ar + 1));
         stack->size_b--;
     }
     else

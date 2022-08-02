@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 02:44:06 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 03:07:39 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void    f_sa(t_stack *stack)
 {
     int temp;
 
-    if (stack->size_a_ar <= 1)
+    if (stack->size_a_ar < 1)
         return ;
     temp = stack->a[stack->size_a_ar];
     stack->a[stack->size_a_ar] = stack->a[stack->size_a_ar - 1];
