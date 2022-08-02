@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 04:23:50 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 04:23:51 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 11:07:45 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ void indexing(t_stack *stack)
 			j++;
 		}
 		stack->index_arr[i] = order_count;
-		ft_printf("imIndex: %d ",stack->index_arr[i]);
+		//ft_printf("imIndex: %d ",stack->index_arr[i]);
 		i++;
 	}
 }

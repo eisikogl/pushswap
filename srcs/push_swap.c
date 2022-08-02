@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 06:04:54 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/02 10:57:07 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
     stack->size_a_ar = stack->arg_c;
 
     ft_printf("****************************** \n");
-    indexing(stack);
 
     if(!check_order(stack))
         small_sort(stack);
