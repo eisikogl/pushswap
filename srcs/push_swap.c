@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 14:04:57 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/03 06:59:54 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ int main(int argc, char *argv[])
 
     argc_count = 0;
     i          = 1;
-    
+
+    if(ft_input_error(argv) || doubles_check(argc,argv))
+    {
+        ft_printf("Error\n");
+        return 0;
+    }
     stack = malloc(sizeof(t_stack));
     if (argc <= 1)
         return (0);
