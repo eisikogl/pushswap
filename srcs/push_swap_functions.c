@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 10:43:23 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/04 01:20:24 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,32 +43,42 @@ void    f_pb(t_stack *stack)
 {
     stack->size_b++;
     stack->b[stack->size_b - 1] = stack->a[stack->size_a_ar];
-    change_stack_a(stack);
+    stack->size_a_ar--;
+    //change_stack_a(stack);
 }
+
+// void    f_pa(t_stack *stack)
+// {
+//     int *temp;
+//     int i = stack->size_a_ar;
+//     int j = stack->size_a_ar;
+
+//     temp = (int *)malloc(sizeof(int) * (stack->size_a_ar + 1));
+//     while(i >= 0)
+//     {
+//         temp[i] = stack->a[i];
+//         i--; 
+//     }
+//     free(stack->a);
+//     stack->a = (int *)malloc(sizeof(int) * (stack->size_a_ar + 2));
+//     stack->a[stack->size_a_ar + 1] = stack->b[stack->size_b - 1];
+//     while(j >= 0)
+//     {
+//         stack->a[j] = temp[j];
+//         j--;
+//     }
+//     free(temp);
+//     stack->size_a_ar++;
+//     change_stack_b(stack);
+// }
 
 void    f_pa(t_stack *stack)
 {
-    int *temp;
-    int i = stack->size_a_ar;
-    int j = stack->size_a_ar;
-
-    temp = (int *)malloc(sizeof(int) * (stack->size_a_ar + 1));
-    while(i >= 0)
-    {
-        temp[i] = stack->a[i];
-        i--; 
-    }
-    free(stack->a);
-    stack->a = (int *)malloc(sizeof(int) * (stack->size_a_ar + 2));
     stack->a[stack->size_a_ar + 1] = stack->b[stack->size_b - 1];
-    while(j >= 0)
-    {
-        stack->a[j] = temp[j];
-        j--;
-    }
-    free(temp);
+
     stack->size_a_ar++;
-    change_stack_b(stack);
+    stack->size_b--;
+    //change_stack_b(stack);
 }
 
 void f_ra(t_stack *stack)

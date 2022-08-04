@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/03 06:11:54 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/04 03:08:25 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void f_rrr(t_stack *stack);
 
 int check_order(t_stack *stack);
 int	cntrl(int nptr);
-int	ft_atoi(const char *nptr);
+long    ft_atoi(const char *nptr);
 int min_index(t_stack *stack,int sort);
 int	ft_input_error(char **input);
 int doubles_check(int argc, char **input);
@@ -60,6 +60,7 @@ void three_sort(t_stack *stack);
 void two_sort(t_stack *stack);
 void indexing(t_stack *stack);
 void big_sort(t_stack *stack);
-void    free_me(t_stack *stack);
+void free_me(t_stack *stack);
+void ft_error(char *err,int i);
 
 #endif

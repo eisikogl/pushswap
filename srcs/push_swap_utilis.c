@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:12:58 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/03 07:05:16 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/04 02:21:21 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int check_order(t_stack *stack)
     i = 0;
     j = 0;
 
-
     while(i < stack->size_a_ar)
     {
         j = i + 1;
@@ -105,11 +104,13 @@ int	cntrl(int nptr)
 	return (a || b);
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
 	long	result;
 	int		a;
+    long    error;
 
+    error = 2147483650;
 	while (cntrl(*nptr))
 		nptr++;
 	a = *nptr == '-';
@@ -119,9 +120,9 @@ int	ft_atoi(const char *nptr)
 	{
 		result = (result * 10) + *nptr++ - '0';
 		if (result > 0x7FFFFFFF && a == 0)
-			return 0;
+			return error;
 		if (result > 0x80000000 && a == 1)
-			return 0;
+			return error;
 	}
 	return (result * ((a * -2) + 1));
 }

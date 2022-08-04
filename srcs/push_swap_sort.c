@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 04:23:50 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 13:49:23 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/04 01:11:31 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,5 +186,6 @@ void indexing(t_stack *stack)
         stack->a[i] = stack->index_arr[i];
         i++;
     }
-
+    free(stack->index_arr);
+    stack->index_arr = NULL; 
 }
