@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/04 03:56:40 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/04 05:36:08 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,22 @@ int main(int argc, char *argv[])
     stack->size_b = 0;
     stack->size_a_ar = stack->arg_c;
     if(!check_order(stack))
-        small_sort(stack);
-    indexing(stack);
-    big_sort(stack);
-    i = stack->size_a_ar;
+    {
+        if((stack->size_a_ar + 1) <= 5)
+            small_sort(stack);
+        else
+        {
+            indexing(stack);
+            big_sort(stack);
+        }
+    }
+    // i = stack->size_a_ar;
     // while(i)
     // {
     //     ft_printf("A: %d\n",stack->a[i]);
     //     i--;
     // }
-    free(stack->a);
+    // free(stack->a);
     free(stack->b);
     free(stack);
 } 
