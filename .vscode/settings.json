@@ -21,6 +21,19 @@
         "map": "c",
         "set": "c",
         "unordered_map": "c",
-        "unordered_set": "c"
+        "unordered_set": "c",
+        "__hash_table": "c",
+        "__split_buffer": "c",
+        "__tree": "c",
+        "array": "c",
+        "deque": "c",
+        "initializer_list": "c",
+        "iterator": "c",
+        "list": "c",
+        "random": "c",
+        "string": "c",
+        "string_view": "c",
+        "utility": "c",
+        "vector": "c"
     }
 }
