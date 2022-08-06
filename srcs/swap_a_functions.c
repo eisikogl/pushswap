@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_functions.c                              :+:      :+:    :+:   */
+/*   push_swap_functions_a.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/06 05:08:10 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/06 06:32:39 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#	include "../includes/push_swap.h"
 
 void	f_sa(t_stack *stack)
 {
@@ -21,30 +21,6 @@ void	f_sa(t_stack *stack)
 	temp = stack->a[stack->size_a_ar];
 	stack->a[stack->size_a_ar] = stack->a[stack->size_a_ar - 1];
 	stack->a[stack->size_a_ar - 1] = temp;
-}
-
-void	f_sb(t_stack *stack)
-{
-	int	temp;
-
-	if (stack->size_b <= 1)
-		return ;
-	temp = stack->b[stack->size_b - 1];
-	stack->b[stack->size_b - 1] = stack->b[stack->size_b - 2];
-	stack->b[stack->size_b - 2] = temp;
-}
-
-void	f_ss(t_stack *stack)
-{
-	f_sa(stack);
-	f_sb(stack);
-}
-
-void	f_pb(t_stack *stack)
-{
-	stack->size_b++;
-	stack->b[stack->size_b - 1] = stack->a[stack->size_a_ar];
-	stack->size_a_ar--;
 }
 
 void	f_pa(t_stack *stack)
@@ -72,30 +48,6 @@ void	f_ra(t_stack *stack)
 	stack->a[0] = temp;
 }
 
-void	f_rb(t_stack *stack)
-{
-	int	temp;
-	int	i;
-	int	j;
-
-	i = stack->size_b - 1;
-	j = 1;
-	temp = stack->b[stack->size_b - 1];
-	while (i > 0)
-	{
-		stack->b[i] = stack->b[stack->size_b - 1 - j];
-		i--;
-		j++;
-	}
-	stack->b[0] = temp;
-}
-
-void	f_rr(t_stack *stack)
-{
-	f_ra(stack);
-	f_rb(stack);
-}
-
 void	f_rra(t_stack *stack)
 {
 	int	temp;
@@ -112,28 +64,4 @@ void	f_rra(t_stack *stack)
 		j++;
 	}
 	stack->a[stack->size_a_ar] = temp;
-}
-
-void	f_rrb(t_stack *stack)
-{
-	int	temp;
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	temp = stack->b[0];
-	while (i < stack->size_b - 1)
-	{
-		stack->b[0 + j] = stack->b[j + 1];
-		i++;
-		j++;
-	}
-	stack->b[stack->size_b - 1] = temp;
-}
-
-void	f_rrr(t_stack *stack)
-{
-	f_rra(stack);
-	f_rrb(stack);
 }
