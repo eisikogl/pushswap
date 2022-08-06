@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 04:23:50 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/04 01:11:31 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/06 03:42:06 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,43 +149,4 @@ void small_sort(t_stack *stack)
         four_sort(stack);
     if((stack->size_a_ar + 1) == 5)
         five_sort(stack);
-}
-
-void indexing(t_stack *stack)
-{
-	int i;
-	int j;
-	int order_count;
-
-	stack->index_arr = malloc(sizeof(int)*(stack->size_a_ar + 1));
-	i = 0;
-	while(i <= stack->size_a_ar)
-	{
-		j = 0;
-		order_count = 0;
-		while(j <= stack->size_a_ar)
-		{
-			if(j == i)
-			{
-				j++;
-				continue;
-			}
-				
-			if(stack->a[i] > stack->a[j])
-				order_count++;
-			
-			j++;
-		}
-		stack->index_arr[i] = order_count;
-		//ft_printf("imIndex: %d ",stack->index_arr[i]);
-		i++;
-	}
-    i=0;
-    while(i <= stack->size_a_ar)
-    {
-        stack->a[i] = stack->index_arr[i];
-        i++;
-    }
-    free(stack->index_arr);
-    stack->index_arr = NULL; 
 }

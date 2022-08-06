@@ -6,11 +6,8 @@ CFLAGS 	= -Wall -Wextra -Werror
 
 RM 		= rm -rf
 
-DIR = srcs
-
 SRCS = $(wildcard srcs/*.c)
 
-objdir = objs/
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

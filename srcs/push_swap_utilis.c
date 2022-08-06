@@ -6,71 +6,71 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:12:58 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/04 05:16:10 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/06 03:42:06 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../includes/push_swap.h"
 
-void    change_stack_a(t_stack *stack)
-{
-    int *temp_stacka;
-    int i;
-    int j;
+// void    change_stack_a(t_stack *stack)
+// {
+//     int *temp_stacka;
+//     int i;
+//     int j;
     
-    i = stack->size_a_ar - 1;
-    j = stack->size_a_ar - 1;
-    temp_stacka = (int *)malloc(sizeof(int) * (stack->size_a_ar));
-    while(i >= 0)
-    {
-        temp_stacka[i] = stack->a[i];
-        i--;
-    }
-    free(stack->a);
-    stack->a = (int *)malloc(sizeof(int) * (stack->size_a_ar));
-    while(j >= 0)
-    {
-        stack->a[j] = temp_stacka[j];
-        j--;
-    }
-    free(temp_stacka);
-    stack->size_a_ar--;
-}
+//     i = stack->size_a_ar - 1;
+//     j = stack->size_a_ar - 1;
+//     temp_stacka = (int *)malloc(sizeof(int) * (stack->size_a_ar));
+//     while(i >= 0)
+//     {
+//         temp_stacka[i] = stack->a[i];
+//         i--;
+//     }
+//     free(stack->a);
+//     stack->a = (int *)malloc(sizeof(int) * (stack->size_a_ar));
+//     while(j >= 0)
+//     {
+//         stack->a[j] = temp_stacka[j];
+//         j--;
+//     }
+//     free(temp_stacka);
+//     stack->size_a_ar--;
+// }
 
-void    change_stack_b(t_stack *stack)
-{
-    int *temp_stackb;
-    int i;
-    int j;
+// void    change_stack_b(t_stack *stack)
+// {
+//     int *temp_stackb;
+//     int i;
+//     int j;
 
-    if (stack->size_b == 1)
-    {
-        free(stack->b);
-        stack->b = (int *)malloc(sizeof(int) * (stack->size_a_ar + 1));
-        stack->size_b--;
-    }
-    else
-    {
-        i = stack->size_b - 2;
-        j = stack->size_b - 2;
-        temp_stackb = (int *)malloc(sizeof(int) * (stack->size_b - 1));
-        while(i >= 0)
-        {
-            temp_stackb[i] = stack->b[i];
-            i--;
-        }
-        free(stack->b);
-        stack->b = (int *)malloc(sizeof(int) * (stack->size_b - 1));
-        while(j >= 0)
-        {
-            stack->b[j] = temp_stackb[j];
-            j--;
-        }
-        free(temp_stackb);
-        stack->size_b--;
-    }
-}
+//     if (stack->size_b == 1)
+//     {
+//         free(stack->b);
+//         stack->b = (int *)malloc(sizeof(int) * (stack->size_a_ar + 1));
+//         stack->size_b--;
+//     }
+//     else
+//     {
+//         i = stack->size_b - 2;
+//         j = stack->size_b - 2;
+//         temp_stackb = (int *)malloc(sizeof(int) * (stack->size_b - 1));
+//         while(i >= 0)
+//         {
+//             temp_stackb[i] = stack->b[i];
+//             i--;
+//         }
+//         free(stack->b);
+//         stack->b = (int *)malloc(sizeof(int) * (stack->size_b - 1));
+//         while(j >= 0)
+//         {
+//             stack->b[j] = temp_stackb[j];
+//             j--;
+//         }
+//         free(temp_stackb);
+//         stack->size_b--;
+//     }
+// }
 
 int check_order(t_stack *stack)
 {
@@ -94,35 +94,35 @@ int check_order(t_stack *stack)
     return 1;
 }
 
-int	cntrl(int nptr)
-{
-	int	a;
-	int	b;
+// int	cntrl(int nptr)
+// {
+// 	int	a;
+// 	int	b;
 
-	a = (nptr == '\n' || nptr == '\t' || nptr == '\r');
-	b = (nptr == '\v' || nptr == '\f' || nptr == ' ');
-	return (a || b);
-}
+// 	a = (nptr == '\n' || nptr == '\t' || nptr == '\r');
+// 	b = (nptr == '\v' || nptr == '\f' || nptr == ' ');
+// 	return (a || b);
+// }
 
-long	ft_atoi(const char *nptr)
-{
-	long	result;
-	int		a;
-    long    error;
+// long	ft_atoi(const char *nptr)
+// {
+// 	long	result;
+// 	int		a;
+//     long    error;
 
-    error = 2147483650;
-	while (cntrl(*nptr))
-		nptr++;
-	a = *nptr == '-';
-	nptr += (a || *nptr == '+');
-	result = 0;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		result = (result * 10) + *nptr++ - '0';
-		if (result > 0x7FFFFFFF && a == 0)
-			return error;
-		if (result > 0x80000000 && a == 1)
-			return error;
-	}
-	return (result * ((a * -2) + 1));
-}
+//     error = 2147483650;
+// 	while (cntrl(*nptr))
+// 		nptr++;
+// 	a = *nptr == '-';
+// 	nptr += (a || *nptr == '+');
+// 	result = 0;
+// 	while (*nptr >= '0' && *nptr <= '9')
+// 	{
+// 		result = (result * 10) + *nptr++ - '0';
+// 		if (result > 0x7FFFFFFF && a == 0)
+// 			ft_error("Error\n",1);
+// 		if (result > 0x80000000 && a == 1)
+// 			ft_error("Error\n",1);
+// 	}
+// 	return (result * ((a * -2) + 1));
+// }

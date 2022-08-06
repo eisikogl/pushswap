@@ -6,11 +6,50 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 03:20:05 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/02 13:39:40 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/05 15:34:16 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void indexing(t_stack *stack)
+{
+	int i;
+	int j;
+	int order_count;
+
+	stack->index_arr = malloc(sizeof(int)*(stack->size_a_ar + 1));
+	i = 0;
+	while(i <= stack->size_a_ar)
+	{
+		j = 0;
+		order_count = 0;
+		while(j <= stack->size_a_ar)
+		{
+			if(j == i)
+			{
+				j++;
+				continue;
+			}
+				
+			if(stack->a[i] > stack->a[j])
+				order_count++;
+			
+			j++;
+		}
+		stack->index_arr[i] = order_count;
+		//ft_printf("imIndex: %d ",stack->index_arr[i]);
+		i++;
+	}
+    i=0;
+    while(i <= stack->size_a_ar)
+    {
+        stack->a[i] = stack->index_arr[i];
+        i++;
+    }
+    free(stack->index_arr);
+    stack->index_arr = NULL; 
+}
 
 void big_sort(t_stack *stack)
 {

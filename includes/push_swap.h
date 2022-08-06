@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/04 03:08:25 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/06 01:03:01 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ typedef struct s_stack
     int size_a;
     int size_a_ar;
     int *index_arr;
+    int	*argumentoi;
 }   t_stack;
 
 void    change_stack_a(t_stack *stack);
 void    change_stack_b(t_stack *stack);
+void	ft_argumentoi(int argc,char **str,t_stack *stack);
 
 void f_sa(t_stack *stack);
 void f_sb(t_stack *stack);
@@ -45,11 +47,13 @@ void f_rrb(t_stack *stack);
 void f_rrr(t_stack *stack);
 
 int check_order(t_stack *stack);
-int	cntrl(int nptr);
-long    ft_atoi(const char *nptr);
+//int	cntrl(int nptr);
+//long    ft_atoi(const char *nptr);
 int min_index(t_stack *stack,int sort);
 int	ft_input_error(char **input);
-int doubles_check(int argc, char **input);
+void doubles_check(t_stack *stack);
+int ft_countarg(int argc,char **argv);
+long	ft_argc(int argc,char **str);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:17:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/04 05:36:08 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/06 03:42:08 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,14 @@ int main(int argc, char *argv[])
     argc_count = 0;
     i          = 1;
 
-    if (argc <= 2)
+    if (argc < 1)
         exit(1);
-     if(ft_input_error(argv) == -1)
-        ft_error("Error\n",1);
-    if(ft_input_error(argv))
-        ft_error("Error\n",1);
-    if(doubles_check(argc,argv))
-        ft_error("Error\n",1);
     stack = malloc(sizeof(t_stack));
-    while(argc_count < argc - 2)
-        argc_count++;
-    stack->arg_c = argc_count;
-    stack->a = (int *)malloc(sizeof(int) * argc_count);
-    stack->b = (int *)malloc(sizeof(int) * argc_count);
-    while(i <= argc - 1)
-    {
-        stack->a[argc_count] = ft_atoi(argv[i]);
-        argc_count--;
-        i++;
-    }
+    stack->arg_c = ft_argc(argc,argv);
+    ft_argumentoi(argc,argv,stack);
+    stack->b = (int *)malloc(sizeof(int) * stack->arg_c);
     stack->size_b = 0;
-    stack->size_a_ar = stack->arg_c;
+    stack->size_a_ar = stack->arg_c - 1;
     if(!check_order(stack))
     {
         if((stack->size_a_ar + 1) <= 5)
@@ -53,13 +39,14 @@ int main(int argc, char *argv[])
             big_sort(stack);
         }
     }
-    // i = stack->size_a_ar;
-    // while(i)
+    i = stack->size_a_ar;
+    // while(i > -1)
     // {
     //     ft_printf("A: %d\n",stack->a[i]);
     //     i--;
     // }
-    // free(stack->a);
+    free(stack->a);
     free(stack->b);
     free(stack);
+    //system("leaks push_swap");
 } 
