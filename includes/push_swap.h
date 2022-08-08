@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/06 06:08:02 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/08 13:46:36 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ typedef struct s_stack
 	int	size_b;
 	int	size_a_ar;
 	int	*index_arr;
+	int	*argumentoi;
 }	t_stack;
 
-long	ft_argc(int argc, char **str);
-void	ft_argumentoi(int argc, char **str, t_stack *stack);
-
+long	ft_argc2(int argc, char **str);
+void	ft_argumentoi(int argc, char **str, t_stack *stack, int i);
+int		ft_argumentoi2(char **str, int i, int j);
+void	ft_reversestack(t_stack *stack);
 void	indexing(t_stack *stack);
 void	big_sort(t_stack *stack);
 
 void	doubles_check(t_stack *stack);
+void	free_me_error(t_stack *stack);
 void	free_me(t_stack *stack);
 void	ft_error(char *err, int i);
 
@@ -51,13 +54,19 @@ void	f_rrb(t_stack *stack);
 void	f_rrr(t_stack *stack);
 
 void	small_sort(t_stack *stack);
-void	five_sort(t_stack *stack);
-void	five_sort2(t_stack *stack, int min_index);
+void	five_sort2(t_stack *stack);
+void	five_sort(t_stack *stack, int min_index);
 void	four_sort(t_stack *stack);
-void	four_sort2(t_stack *stack, int min_index);
 void	three_sort(t_stack *stack);
 void	three_sort2(t_stack *stack, int i);
 void	two_sort(t_stack *stack);
+long	ft_argc(int argc, char **str, int i, int j);
+int		ft_argerror(char **str, int i, int j);
+void	bigsortfunction(t_stack *stack, int i);
+
+void	indexing2(t_stack *stack);
+
+int		min_indexing(t_stack *stack);
 
 int		check_order(t_stack *stack);
 

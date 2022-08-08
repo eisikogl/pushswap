@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_sort5_4.c                                :+:      :+:    :+:   */
+/*   sort_five_four.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 06:01:46 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/06 06:24:40 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/08 12:51:04 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	include "../includes/push_swap.h"
 
-void	four_sort(t_stack *stack)
+int	min_indexing(t_stack *stack)
 {
 	int	i;
 	int	min;
@@ -29,6 +29,14 @@ void	four_sort(t_stack *stack)
 		}
 		i--;
 	}
+	return (min_index);
+}
+
+void	four_sort(t_stack *stack)
+{
+	int	min_index;
+
+	min_index = min_indexing(stack);
 	if (min_index == stack->size_a_ar - 1)
 	{
 		f_sa(stack);
@@ -50,30 +58,10 @@ void	four_sort(t_stack *stack)
 	three_sort(stack);
 	f_pa(stack);
 	ft_printf("pa\n");
-
 }
 
-// void	four_sort2(t_stack *stack, int min_index)
-// {
-// }
-
-void	five_sort(t_stack *stack)
+void	five_sort(t_stack *stack, int min_index)
 {
-	int	i;
-	int	min;
-	int	min_index;
-
-	i = stack->size_a_ar;
-	min = stack->a[i];
-	while (i >= 0)
-	{
-		if (min >= stack->a[i])
-		{
-			min = stack->a[i];
-			min_index = i;
-		}
-		i--;
-	}
 	if (min_index == stack->size_a_ar - 1)
 	{
 		f_sa(stack);
@@ -97,13 +85,14 @@ void	five_sort(t_stack *stack)
 		f_rra(stack);
 		ft_printf("rra\n");
 	}
+	five_sort2(stack);
+}
+
+void	five_sort2(t_stack *stack)
+{
 	f_pb(stack);
 	ft_printf("pb\n");
 	four_sort(stack);
 	f_pa(stack);
 	ft_printf("pa\n");
 }
-
-// void	five_sort2(t_stack *stack, int min_index)
-// {
-// }

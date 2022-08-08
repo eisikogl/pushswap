@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_sort3_2.c                                :+:      :+:    :+:   */
+/*   sort_three_two.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 04:23:50 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/06 06:24:30 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/08 13:49:54 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #	include "../includes/push_swap.h"
 
@@ -20,7 +19,6 @@ void	two_sort(t_stack *stack)
 		f_sa(stack);
 		ft_printf("sa\n");
 	}
-
 }
 
 void	three_sort(t_stack *stack)
@@ -41,6 +39,11 @@ void	three_sort(t_stack *stack)
 		f_rra(stack);
 		ft_printf("rra\n");
 	}
+	three_sort2(stack, i);
+}
+
+void	three_sort2(t_stack *stack, int i)
+{
 	if (stack->a[i] > stack->a[i - 1] && stack->a[i] < stack->a[0] && \
 	stack->a[i - 1] < stack->a[0])
 	{
@@ -61,8 +64,3 @@ void	three_sort(t_stack *stack)
 		ft_printf("sa\nrra\n");
 	}
 }
-
-// void	three_sort2(t_stack *stack, int i)
-// {
-// }
-
