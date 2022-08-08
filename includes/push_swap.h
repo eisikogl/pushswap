@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/08 13:46:36 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/08 14:41:07 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-# include "../libs/ft_printf/ft_printf.h"
-# include "../libs/libft/libft.h"
+# include "../libarys/ft_printf/ft_printf.h"
+# include "../libarys/libft/libft.h"
 
 typedef struct s_stack
 {
