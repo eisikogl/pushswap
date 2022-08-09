@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:14:09 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/08 15:03:59 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/09 03:55:01 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	five_sort2(t_stack *stack);
 void	indexing(t_stack *stack);
 void	indexing2(t_stack *stack);
 void	big_sort(t_stack *stack);
-void	bigsortfunction(t_stack *stack, int i);
+void	bigsortfunction(t_stack *stack, int i, int size);
 
 void	two_sort(t_stack *stack);
 void	three_sort(t_stack *stack);

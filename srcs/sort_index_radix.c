@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 03:20:05 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/08 13:49:16 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/09 03:55:27 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,11 @@ void	big_sort(t_stack *stack)
 	int	max_num;
 	int	max_bits;
 	int	i;
+	int	size;
 
 	i = 0;
-	max_num = stack->size_a_ar;
+	size = stack->size_a_ar + 1;
+	max_num = size - 1;
 	max_bits = 0;
 	while ((max_num >> max_bits) != 0)
 	{
@@ -70,18 +72,18 @@ void	big_sort(t_stack *stack)
 	}
 	while (i < max_bits)
 	{
-		bigsortfunction(stack, i);
+		bigsortfunction(stack, i, size);
 		i++;
 	}
 }
 
-void	bigsortfunction(t_stack *stack, int i)
+void	bigsortfunction(t_stack *stack, int i, int size)
 {	
 	int	j;
 	int	num;
 
 	j = 0;
-	while (j < stack->size_a_ar + 1)
+	while (j < size)
 	{
 		num = stack->a[stack->size_a_ar];
 		if ((((num >> i) & 1) == 1))

@@ -6,7 +6,7 @@
 /*   By: eisikogl <eisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 06:01:46 by eisikogl          #+#    #+#             */
-/*   Updated: 2022/08/08 12:51:04 by eisikogl         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:15:01 by eisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,9 @@ void	five_sort(t_stack *stack, int min_index)
 	}
 	else if (min_index == stack->size_a_ar - 2)
 	{
-		f_rra(stack);
-		f_rra(stack);
-		f_rra(stack);
-		ft_printf("rra\nrra\nrra\n");
+		f_ra(stack);
+		f_ra(stack);
+		ft_printf("ra\nra\n");
 	}
 	else if (min_index == stack->size_a_ar - 3)
 	{
